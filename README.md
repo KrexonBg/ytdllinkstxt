@@ -58,7 +58,7 @@ https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ------------------
 
 * Make sure you have the latest version of `yt_dlp` installed.
-* Check that the `ffmpeg` executable is installed and configured correctly.
+* Check that the `ffmpeg` executable is installed and configured correctly. You can check the location of the installation of `ffmpeg` by using this command `whereis ffmpeg`
 * If you encounter any issues, please open an issue on this repository.
 
 **License**
