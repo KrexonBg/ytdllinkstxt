@@ -16,7 +16,7 @@ def download_mp3(youtube_url, output_folder):
         'outtmpl':
         os.path.join(output_folder, '%(title)s.%(ext)s'),
         'ffmpeg_location':
-        '/nix/store/9rqzkksrsc5ld20zrsibjvbmfw6q5ka9-ffmpeg-full-7.0-bin/bin/ffmpeg'  # Linux example
+        '/usr/bin/ffmpeg'  # Linux example
     }
     with YoutubeDL(ydl_opts) as ydl:
         ydl.download([youtube_url])
