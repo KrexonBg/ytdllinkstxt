@@ -1,7 +1,7 @@
 import os
 import sys
 from yt_dlp import YoutubeDL
-
+from helpers import is_non_zero_file
 
 # Function to download videos and save to a specific directory
 def download_mp3(youtube_url, output_folder):
@@ -31,8 +31,9 @@ if folder_name:
         os.makedirs(folder_name)
     os.chdir(folder_name)
 
-# Scan the current directory for.txt files
+# Scan the current directory for .txt files
 txt_files = [f for f in os.listdir() if f.endswith('.txt')]
+print(txt_files)
 
 # Check if there are any.txt files
 if not txt_files:
@@ -64,6 +65,9 @@ if not os.path.exists(output_folder_name):
 
 try:
     with open(selected_file, 'r') as file:
+        if not is_non_zero_file(selected_file): # file length is zero
+            print("Empty file selected.")
+            sys.exit(1)
         for line in file:
             youtube_url = line.strip()
             if youtube_url:  # Check if the line is not empty
