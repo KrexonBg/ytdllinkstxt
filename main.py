@@ -64,12 +64,18 @@ if not os.path.exists(output_folder_name):
 
 try:
     with open(selected_file, 'r') as file:
-        for line in file:
-            youtube_url = line.strip()
-            if youtube_url:  # Check if the line is not empty
-                print(f"Downloading {youtube_url}...")
-                download_mp3(youtube_url, output_folder_name)
-                print(f"Downloaded and saved to {output_folder_name}")
+        urls = file.readlines()
+        if not urls:
+            print("Error: The selected file is empty. Please add YouTube URLs to download.")
+            sys.exit(1)
 except FileNotFoundError:
     print(f"File {selected_file} not found.")
     sys.exit(1)
+
+for youtube_url in urls:
+    youtube_url = youtube_url.strip()
+    if youtube_url: 
+        print(f"Downloading {youtube_url}...")
+        download_mp3(youtube_url, output_folder_name)
+        print(f"Downloaded and saved to {output_folder_name}")
+
