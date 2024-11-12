@@ -71,6 +71,10 @@ This script is licensed under the MIT License.
 
 Contributions are welcome! Please fork this repository and submit a pull request with your changes.
 
+**Credits**
+--------------
+Thanks to Saru2003 for fixing the First issue with the script (unexpected exit after empty file)
+
 **Changelog**
 -------------
 
