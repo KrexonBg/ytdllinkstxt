@@ -1,4 +1,4 @@
-# YouTube MP3 Downloader
+# YouTube MP3 Downloader (DISCONTINUED)
 =========================
 
 **Version 1.0.0 Alpha** 🎉
